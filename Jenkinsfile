@@ -29,7 +29,7 @@ pipeline {
             steps{
                 testcompletetest generateMHT: true,
                     launchType: 'lckdt',
-                    project" 'MyProj',
+                    project" 'sonarqube',
                     suite: 'Projects\\JenkinsTests.pjs',
                         test: 'MyKDT',
                         useTCService: true,
