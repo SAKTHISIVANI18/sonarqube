@@ -25,14 +25,17 @@ pipeline {
             }
 
          }
+        stage('Building SONAR') {
+            steps{
         try {
 stage("Building SONAR ") {
 sh './mvnw clean sonarqube'
 }
-catch (e) {emailext attachLog: true, body: 'See attached log', subject: 'BUSINESS Build Failure', to: 'sakthisivani18@gmail.com'
+        }catch (e) {emailext attachLog: true, body: 'See attached log', subject: 'BUSINESS Build Failure', to: 'sakthisivani18@gmail.com'
 step([$class: 'WsCleanup'])
 return
 }
+        }
         
         stage ('sonar') {
 
