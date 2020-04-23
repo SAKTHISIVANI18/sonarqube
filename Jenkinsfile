@@ -1,7 +1,7 @@
 pipeline {
 
     agent {
-    label 'jacoco'
+    label 'testagent'
     }
 
      
@@ -25,11 +25,20 @@ pipeline {
             }
 
          }
-        stage ('coverage') {
+        stage ('test') {
             steps{
-        jacoco buildOverBuild: true, changeBuildStatus: true, runAlways: true, skipCopyOfSrcFiles: true
+                testcompletetest generateMHT: true,
+                    launchType: 'lckdt',
+                    project" 'MyProj',
+                    suite: 'Projects\\JenkinsTests.pjs',
+                        test: 'MyKDT',
+                        useTCService: true,
+                        userName: 'SAKTHISIVANI18',
+                userPassword: 'Supsara1831'
             }
         }
+                
+        
         stage ('sonar') {
 
             steps {
