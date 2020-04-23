@@ -23,12 +23,7 @@ pipeline {
             }
 
          }
-        stage('Building SONAR') {
-            steps{
-              
-sh './mvnw clean sonarqube'
-}
-}
+       
         
         
         stage ('sonar') {
