@@ -7,7 +7,7 @@ pipeline {
         
         stage ('checkout'){
             steps {
-           git branch: 'master', url: "https://github.com/SAKTHISIVANI18/sonarqube.git"
+           git 'https://github.com/sshamit/jpetstore-6.git'
             }
         }
 
