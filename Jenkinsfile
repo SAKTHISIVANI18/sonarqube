@@ -1,6 +1,8 @@
 pipeline {
 
-    agent any
+    agent {
+    label 'jacoco'
+    }
 
      
     stages {
@@ -23,6 +25,11 @@ pipeline {
             }
 
          }
+        stage ('coverage') {
+            steps{
+        jacoco buildOverBuild: true, changeBuildStatus: true, runAlways: true, skipCopyOfSrcFiles: true
+            }
+        }
         stage ('sonar') {
 
             steps {
