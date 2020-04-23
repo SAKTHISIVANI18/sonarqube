@@ -375,6 +375,12 @@
         <cargo.maven.containerUrl>http://download.java.net/glassfish/${glassfish.version}/release/glassfish-${glassfish.version}.zip</cargo.maven.containerUrl>
       </properties>
     </profile>
+         <profile>
+                <id>jacoco</id>
+         <properties>
+        <sonar.coverage.jacoco.xmlReportPaths>../app-it/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+    </properties>
+         </profile>
     <profile>
       <id>resin</id>
       <properties>
