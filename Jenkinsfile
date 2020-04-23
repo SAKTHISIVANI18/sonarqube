@@ -44,4 +44,4 @@ sh './mvnw clean sonarqube'
         
     }
 }
-}
+
